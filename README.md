@@ -24,7 +24,7 @@ Exercise of module 2´s intermediate evaluation by Olga Rodríguez Garrucho. Cre
 
 ### Game:
 
-![Web game](./web-game.jpg)
+![Web game](./images/web-game.jpg)
 
 ---
 
