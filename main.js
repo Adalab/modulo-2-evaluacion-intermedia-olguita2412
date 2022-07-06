@@ -13,7 +13,7 @@ console.log(randomNumber);
 
 const compareNumber = () => {
     const inputValue = inputNumber.value;
-    if(inputValue > 100 || inputValue < 1){
+    if(inputValue > 100 || inputValue < 1 || isNaN(inputValue)){
         clue.innerHTML = "El número debe estar entre 1 y 100.";
     }
     else if(inputValue > randomNumber){
@@ -21,7 +21,7 @@ const compareNumber = () => {
     } else if(inputValue < randomNumber){
         clue.innerHTML = "Demasiado bajo.";
     } else {
-        clue.innerHTML = "Has ganado campeona!!!";
+        clue.innerHTML = "¡¡¡Has ganado campeona!!!";
     }
 };
 
