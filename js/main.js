@@ -13,30 +13,42 @@ function getRandomNumber(max) {
 
 console.log(randomNumber);
 
+function writeTip(message) {
+    clue.innerHTML = message;
+};
+
+function isNumber () {
+    const inputValue = parseInt(inputNumber.value);
+    if (isNaN(inputValue) || inputValue === ''){
+        writeTip("Introduce un número");
+    } else {
+        compareNumber();
+    }
+}
+
 const compareNumber = () => {
-    const inputValue = inputNumber.value;
-    if(inputValue > 100 || inputValue < 1 || isNaN(inputValue)){
-        clue.innerHTML = "El número debe estar entre 1 y 100.";
+    const inputValue = parseInt(inputNumber.value);
+    if(inputValue > 100 || inputValue < 1){
+       writeTip("El número debe estar entre 1 y 100.");
     }
     else if(inputValue > randomNumber){
-        clue.innerHTML = "Demasiado alto.";
+        writeTip("Demasiado alto.");
     } else if(inputValue < randomNumber){
-        clue.innerHTML = "Demasiado bajo.";
+        writeTip("Demasiado bajo.");
     } else {
-        clue.innerHTML = "¡¡¡Has ganado campeona!!!";
+        writeTip("¡¡¡Has ganado campeona!!!");
     }
 };
 
 function attemptsCount() {
-    const totalAttempts = ++attemptsValue;
-    attempts.innerHTML = totalAttempts;
+    attemptsValue = ++attemptsValue;
+    attempts.innerHTML = attemptsValue;
 }
 
 function handleClick(e) {
     e.preventDefault();
-    compareNumber();
+    isNumber();
     attemptsCount();
 };
-
 
 btn.addEventListener('click', handleClick);
