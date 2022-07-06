@@ -8,9 +8,10 @@ const attempts = document.querySelector('.js_attempts');
 function getRandomNumber(max) {
     return Math.ceil(Math.random() * max);
 };
+const randomNumber = getRandomNumber(100);
+console.log(randomNumber);
 
 const compareNumber = () => {
-    const randomNumber = getRandomNumber(100);
     const inputValue = inputNumber.value;
     if(inputValue > 100 || inputValue < 1){
         clue.innerHTML = "El número debe estar entre 1 y 100.";
@@ -22,14 +23,20 @@ const compareNumber = () => {
     } else {
         clue.innerHTML = "Has ganado campeona!!!";
     }
-    console.log(randomNumber);
-}
+};
 
+let attemptsValue = 0;
+
+function attemptsCount() {
+    const totalAttempts = ++attemptsValue;
+    attempts.innerHTML = totalAttempts;
+}
 
 function handleClick(e) {
     e.preventDefault();
     compareNumber();
-}
+    attemptsCount();
+};
 
 
 btn.addEventListener('click', handleClick);
