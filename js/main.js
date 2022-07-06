@@ -51,4 +51,11 @@ function handleClick(e) {
     attemptsCount();
 };
 
+function handleEnter (event) {
+    if(event.code === 'Enter'){
+        handleClick();
+    }
+}
+
 btn.addEventListener('click', handleClick);
+btn.addEventListener('keyup', handleEnter);
