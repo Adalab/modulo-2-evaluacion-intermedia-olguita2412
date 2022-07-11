@@ -3,79 +3,168 @@
     margin: 0;
     padding: 0;
 }
-:root{
-    font-family: fantasy;
+
+.body{
+    background-image: repeating-linear-gradient(rgb(88, 243, 249), rgb(187, 70, 250), rgb(249, 246, 88), rgb(88, 243, 249));
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 100vh;
 }
+
 .main{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100vw;
-    height: 50vh;
+    
 }
 .title{
     padding: 20px 20px 5px 20px;
     margin-bottom: 20px;
     margin-top: 100px;
     font-size: 50px;
-    color: deeppink;
-    transition: color ease 5s;     
+    font-family: 'Pacifico', cursive;
+    color: rgb(249, 246, 88);
+    transition: color ease 1s;     
 }
 
 .title:hover {
-    color: black;
-  };
+    color: white;
+}
 
 .form{
     padding: 5px 20px;
+    width: 45vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Indie Flower', cursive;
     
 }
 
 .label-form{
-    font-size: 28px;
+    font-size: 24px;
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 7px;
-    color: darkgrey;
+    color: white;
+    text-align: center;
 
 }
 
 .input-form{
-    background-color: rgb(252, 220, 243);
+    background-image: repeating-radial-gradient(rgb(252, 220, 243), rgb(249, 246, 88));
     border-radius: 10px;
     border: none;
     padding: 7px;
-    color: white;
+    color: deeppink;
     font-weight: bold;
     text-align: center;
-    font-size: 20px;
+    font-size: 18px;
+    font-family: 'Pacifico', cursive;
     margin-bottom: 20px;
+    
 }
 
 .button{
-    background-color: pink;
+    background-image: repeating-radial-gradient(rgb(252, 220, 243), rgb(250, 70, 241));
     border: none;
-    border-radius: 20px;
+    border-radius: 50px;
     color: white;
     padding: 7px 20px;
     font-weight: bold;
     font-size: 24px;
-    margin-bottom: 10px;
-    
+    font-family: 'Indie Flower', cursive;
+    margin-bottom: 10px;  
+}
+
+.container{
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.container-paragraph{
+    width: 40vw;
+    display: flex;
+    flex-direction: column;
 }
 
 .paragraph{
     margin: 5px 20px;
     padding: 5px;
-    width: 30vw;
-    border: solid 3px rgb(216, 141, 193, 0.21);;
+    border: solid 3px rgba(255, 255, 255, 0.21);;
     text-align: center;
     font-size: 16px;
-    color: darkgrey;
+    color: white;
 }
 
 .span{
-    color: deeppink;
+    color: white;
     font-weight: bold;
+}
+
+.footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer__text{
+    font-size: 14px;
+    color: rgba(143, 39, 241, 0.21);
+}
+
+.footer__image{
+    width: 150px;
+}
+
+.bigger{
+    background-color: darkcyan;
+}
+
+.smaller{
+    background-color: rgb(218, 67, 175);
+}
+
+.error{
+    background-color: red;
+}
+
+.winner{
+    background-image: url(../images/confeti.gif);
+    height: 100vh;
+    
+}
+
+@keyframes winner {
+    from {
+      opacity: 0;
+      transform: scale(10) rotate(-360deg);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+}
+
+@media all and (max-width: 768px) {
+    .container{
+    flex-direction: column;
+    }
+    .container-paragraph{
+        order: 2;
+    }
+    .form{
+        order: 1;
+    }
 }
