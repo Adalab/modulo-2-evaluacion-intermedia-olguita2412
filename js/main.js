@@ -65,9 +65,9 @@ const compareNumber = () => {
         writeTip("Demasiado bajo.");
         changeColorSmaller();
     } else {
-        writeTip("¡¡¡Has ganado campeona!!!");
+        writeTip("¡¡¡Has ganado campeon@!!!");
         winner();
-        alert('¡¡¡Enhorabuena!!! ¡¡¡Has ganado campeona!!!')
+        alert('¡¡¡Enhorabuena!!! ¡¡¡Has ganado campeon@!!!')
     }
 };
 
